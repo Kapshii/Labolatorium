@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="542.0" prefWidth="701.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Rezerwacja.RezerwacjaController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <TableView fx:id="tableView" focusTraversable="false" prefHeight="404.0" prefWidth="701.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="ime" prefWidth="140.0" text="Imię" />
+                <TableColumn fx:id="Nazwisko" prefWidth="140.0" text="Nazwisko" />
+                  <TableColumn fx:id="Misiac" prefWidth="140.0" text="Dzień" />
+                  <TableColumn fx:id="zGodziny" prefWidth="140.0" text="Z godziny" />
+                  <TableColumn fx:id="doGodziny" prefWidth="140.0" text="Do godziny" />
+              </columns>
+            </TableView>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="135.0" prefWidth="701.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <VBox alignment="BASELINE_LEFT" focusTraversable="true" prefHeight="196.0" prefWidth="285.0" style="-fx-background-color: e4e4e4e4;">
+                     <children>
+                        <JFXTextField fx:id="name" labelFloat="true" prefHeight="24.0" prefWidth="368.0" promptText="Imię">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="nazwisko" labelFloat="true" prefHeight="38.0" prefWidth="366.0" promptText="Nazwisko">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox fx:id="root" prefHeight="196.0" prefWidth="285.0" style="-fx-background-color: e4e4e4e4;">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="5.0" />
+                     </HBox.margin>
+                     <children>
+                        <JFXDatePicker fx:id="misiac" defaultColor="#087bd3" editable="false" layoutX="10.0" layoutY="11.0" prefHeight="31.0" prefWidth="260.0" promptText="Data" />
+                        <JFXDatePicker fx:id="zgodziny" accessibleRole="TEXT" defaultColor="#087bd3" editable="false" prefHeight="31.0" prefWidth="260.0" promptText="Z Godziny" showTime="true">
+                           <VBox.margin>
+                              <Insets top="1.0" />
+                           </VBox.margin>
+                        </JFXDatePicker>
+                        <JFXDatePicker fx:id="dogodziny" accessibleRole="TEXT_FIELD" defaultColor="#087bd3" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="260.0" promptText="Do Godziny" showTime="true">
+                           <VBox.margin>
+                              <Insets top="1.0" />
+                           </VBox.margin>
+                        </JFXDatePicker>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="197.0" prefWidth="191.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="345.0">
+                           <children>
+                              <JFXButton fx:id="deletedButton" contentDisplay="CENTER" onAction="#deleted" prefHeight="50.0" prefWidth="200.0" stylesheets="@Rezerwacja1.css" text="Deleted" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="52.0" prefWidth="340.0">
+                           <children>
+                              <JFXButton fx:id="saveButton" onAction="#RezerwacjaAdd" prefHeight="50.0" prefWidth="200.0" stylesheets="@Rezerwacja3.css" text="Zapisać" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="155.0" prefHeight="52.0" prefWidth="340.0">
+                           <children>
+                              <JFXButton fx:id="cancelButton" onAction="#cancel" prefHeight="50.0" prefWidth="200.0" stylesheets="@Rezerwacja2.css" text="Anulować" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

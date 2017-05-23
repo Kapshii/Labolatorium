@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Labolatorium.main.MainController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <right>
+            <VBox prefHeight="400.0" prefWidth="136.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddMember" prefHeight="140.0" prefWidth="144.0" text="Dodaj Użytkownika">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Add%20User%20Male_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddBook" prefHeight="140.0" prefWidth="144.0" text="Dodaj książkę">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Open%20Book_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadMembersTable" prefHeight="140.0" prefWidth="144.0" text="Zobacz Użytkowników">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Table_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadBookTable" prefHeight="140.0" prefWidth="144.0" text="Wyświetl książki">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Book%20Shelf_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="292.0" mnemonicParsing="false" onAction="#Setting" prefHeight="140.0" prefWidth="144.0" text="Ustawienia">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Settings_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <TabPane prefHeight="400.0" prefWidth="741.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Wydanie książki">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="317.0" prefWidth="468.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="4.0" prefHeight="346.0" prefWidth="464.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox fx:id="book_info" alignment="CENTER" fillHeight="false" prefHeight="153.0" prefWidth="464.0" style="-fx-background-color: #e7e7e7e7;">
+                                       <children>
+                                          <JFXTextField fx:id="bookIDInput" onAction="#loadBookInfo" prefHeight="25.0" prefWidth="120.0" promptText=" ID książki" />
+                                          <VBox alignment="CENTER" prefHeight="122.0" prefWidth="295.0">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa książki" textAlignment="CENTER" wrappingWidth="316.13671875">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin></Text>
+                                                <Text fx:id="bookAuthor" layoutX="10.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" textAlignment="CENTER" wrappingWidth="316.13671875">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text fx:id="bookStatus" layoutX="20.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" textAlignment="CENTER" wrappingWidth="316.13671875">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="member_info" alignment="CENTER" fillHeight="false" layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="147.0" prefWidth="436.0" style="-fx-background-color: #e7e7e7e7;">
+                                       <children>
+                                          <JFXTextField fx:id="memberIDInput" onAction="#loadMemberInfo" promptText="ID użytkownika" />
+                                          <VBox alignment="CENTER" prefHeight="101.0" prefWidth="291.0">
+                                             <children>
+                                                <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa członka" textAlignment="CENTER" wrappingWidth="316.13671875" />
+                                                <Text fx:id="memberMobile" layoutX="10.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontakt" textAlignment="CENTER" wrappingWidth="316.13671875">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" right="20.0" top="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="5.0" right="20.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="48.0" prefWidth="464.0">
+                                       <children>
+                                          <JFXButton onAction="#loadIssueOperation" prefHeight="27.0" prefWidth="112.0" styleClass="setup-button" stylesheets="@main.css" text="Kwestia">
+                                             <graphic>
+                                                <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Checkmark_50px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Аktualizacja/Uległość">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="103.0" layoutY="105.0" prefHeight="322.0" prefWidth="212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <JFXTextField fx:id="bookID" labelFloat="true" maxWidth="274.0" minWidth="274.0" onAction="#loadBookInfo2" prefHeight="36.0" prefWidth="206.0" promptText="Wprowadź identyfikator książki" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets top="10.0" />
+                                       </BorderPane.margin>
+                                    </JFXTextField>
+                                 </top>
+                                 <bottom>
+                                    <HBox alignment="CENTER" prefHeight="63.0" prefWidth="468.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <JFXButton alignment="TOP_LEFT" onAction="#loadRenewOp" prefHeight="34.0" prefWidth="118.0" styleClass="setup-button" stylesheets="@main.css" text="Аktualizacja">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Refresh_52px_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton onAction="#loadSubmissionOP" prefHeight="35.0" prefWidth="115.0" styleClass="setup-button" stylesheets="@main.css" text="Uległość">
+                                             <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Checked_52px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </bottom>
+                                 <right>
+                                    <ListView fx:id="issueDataList" prefHeight="244.0" prefWidth="428.0" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </BorderPane.margin>
+                                    </ListView>
+                                 </right>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <left>
+            <Pane prefHeight="400.0" prefWidth="309.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Region layoutX="157.0" layoutY="40.0" prefHeight="213.0" prefWidth="27.0" style="-fx-background-color: #fbfbfb;" />
+                  <Label fx:id="day1" layoutX="4.0" layoutY="44.0" text="Pon">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day2" layoutX="35.0" layoutY="44.0" text="Wto">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day3" layoutX="58.0" layoutY="44.0" text="Śro">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day4" layoutX="89.0" layoutY="44.0" text="Czw">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day5" layoutX="117.0" layoutY="44.0" text="Pią">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day6" layoutX="136.0" layoutY="44.0" text="Sob">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="day7" layoutX="159.0" layoutY="44.0" text="Sun">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="25.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" />
+                  <Separator layoutX="54.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" />
+                  <Separator layoutX="81.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" />
+                  <Separator layoutX="129.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" prefWidth="16.0" />
+                  <Separator layoutX="161.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" prefWidth="2.0" />
+                  <Separator layoutX="102.0" layoutY="70.0" orientation="VERTICAL" prefHeight="170.0" prefWidth="20.0" />
+                  <Separator layoutX="3.0" layoutY="67.0" minWidth="188.0" prefHeight="4.0" prefWidth="188.0" />
+                  <Label fx:id="lblMouthYear" alignment="CENTER" layoutX="40.0" layoutY="11.0" prefHeight="27.0" prefWidth="111.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case01" alignment="CENTER" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case08" alignment="CENTER" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case15" alignment="CENTER" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case22" alignment="CENTER" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case29" alignment="CENTER" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case36" alignment="CENTER" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case37" alignment="CENTER" layoutX="29.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case30" alignment="CENTER" layoutX="29.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case23" alignment="CENTER" layoutX="29.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case16" alignment="CENTER" layoutX="29.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case09" alignment="CENTER" layoutX="28.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case02" alignment="CENTER" layoutX="29.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case04" alignment="CENTER" layoutX="84.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case11" alignment="CENTER" layoutX="83.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case18" alignment="CENTER" layoutX="84.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case25" alignment="CENTER" layoutX="84.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case32" alignment="CENTER" layoutX="84.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case39" alignment="CENTER" layoutX="84.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case38" alignment="CENTER" layoutX="55.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case31" alignment="CENTER" layoutX="55.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case24" alignment="CENTER" layoutX="55.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case17" alignment="CENTER" layoutX="55.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case10" alignment="CENTER" layoutX="55.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case03" alignment="CENTER" layoutX="55.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case07" alignment="CENTER" layoutX="166.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case14" alignment="CENTER" layoutX="166.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case21" alignment="CENTER" layoutX="166.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case28" alignment="CENTER" layoutX="166.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case35" alignment="CENTER" layoutX="166.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case42" alignment="CENTER" layoutX="166.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case06" alignment="CENTER" layoutX="137.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case13" alignment="CENTER" layoutX="137.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case20" alignment="CENTER" layoutX="137.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case27" alignment="CENTER" layoutX="137.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case34" alignment="CENTER" layoutX="137.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case41" alignment="CENTER" layoutX="137.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case40" alignment="CENTER" layoutX="110.0" layoutY="220.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case33" alignment="CENTER" layoutX="110.0" layoutY="190.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case26" alignment="CENTER" layoutX="110.0" layoutY="160.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case19" alignment="CENTER" layoutX="110.0" layoutY="130.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case12" alignment="CENTER" layoutX="110.0" layoutY="99.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="case05" alignment="CENTER" layoutX="110.0" layoutY="70.0" minHeight="25.0" prefWidth="25.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="btnMonthPrec" fitHeight="22.0" fitWidth="27.0" layoutX="13.0" layoutY="13.0" onMousePressed="#precMonth" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Left_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="btnMonthSuiv" fitHeight="20.0" fitWidth="20.0" layoutX="150.0" layoutY="14.0" onMousePressed="#nextMonth" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Right_48px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label" layoutX="3.0" layoutY="297.0" minHeight="16" minWidth="69" prefHeight="42.0" prefWidth="184.0" text="00:00:00 AM" textFill="#282626">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" layoutX="187.0" layoutY="3.0" prefHeight="400.0" prefWidth="123.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#loadAddRezerwacja" prefHeight="100.0" prefWidth="144.0" text="Rezerwacja Kto jest Zarezorwany" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadRezerwacjaTable" prefHeight="100.0" prefWidth="145.0" text=" Rezerwacja sprzęty" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </left>
+      </BorderPane>
+   </children>
+</StackPane>

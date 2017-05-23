@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="307.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+   <children>
+      <Pane focusTraversable="true" layoutX="29.0" layoutY="30.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="219.0" prefWidth="303.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXTextField fx:id="login" layoutX="9.0" layoutY="14.0" prefHeight="39.0" prefWidth="282.0" promptText="Imię" />
+            <JFXPasswordField fx:id="password" layoutX="9.0" layoutY="73.0" prefHeight="25.0" prefWidth="282.0" promptText="Hasło" />
+            <JFXButton fx:id="zaloguj" buttonType="RAISED" layoutX="40.0" layoutY="150.0" onAction="#makeLogin" prefHeight="39.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Zaloguj Się" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="152.0" layoutY="150.0" onAction="#makeSingUp" prefHeight="39.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Zarejestry Się" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
+      <Text fx:id="text" fontSmoothingType="LCD" layoutX="5.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="350.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

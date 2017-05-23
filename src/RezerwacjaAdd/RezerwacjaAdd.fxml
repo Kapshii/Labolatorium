@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="534.0" prefWidth="778.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RezerwacjaAdd.RezerwacjaAddController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="164.0" prefWidth="778.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <VBox alignment="BASELINE_LEFT" focusTraversable="true" prefHeight="197.0" prefWidth="389.0" style="-fx-background-color: e4e4e4e4;">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <children>
+                        <JFXTextField fx:id="name" prefHeight="25.0" prefWidth="243.0" promptText="Imię" />
+                        <JFXTextField fx:id="nazwisko" layoutX="10.0" layoutY="18.0" promptText="Nazwisko" />
+                        <JFXDatePicker fx:id="misiac" defaultColor="#1976d2" editable="false" prefHeight="31.0" prefWidth="364.0" promptText="Data" />
+                        <JFXDatePicker fx:id="zgodziny" defaultColor="#1976d2" editable="false" prefHeight="31.0" prefWidth="358.0" promptText="Z godziny" showTime="true" />
+                        <JFXDatePicker fx:id="dogodziny" defaultColor="#1976d2" editable="false" layoutX="10.0" layoutY="111.0" prefHeight="31.0" prefWidth="358.0" promptText="Do godziny" showTime="true" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="197.0" prefWidth="260.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sprzęt" textAlignment="CENTER" wrappingWidth="231.13671875" />
+                        <JFXCheckBox fx:id="sprzet" onAction="#CheckBox10" text="Labolatoria" />
+                        <JFXCheckBox fx:id="CheckBox2" onAction="#CheckBox11" text="Gabinet">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="CheckBox3" onAction="#CheckBox12" text="Computer">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="CheckBox4" onAction="#CheckBox13" text="Studja">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="CheckBox5" onAction="#CheckBox14" text="Wyklad">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="197.0" prefWidth="212.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="353.0">
+                           <children>
+                              <JFXButton fx:id="saveButton" alignment="CENTER" contentDisplay="CENTER" onAction="#RezerwacjaSprzet" prefHeight="50.0" prefWidth="200.0" stylesheets="@../Rezerwacja/Rezerwacja3.css" text="Zapisać" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="345.0">
+                           <children>
+                              <JFXButton fx:id="deletedButton" contentDisplay="CENTER" onAction="#deleted" prefHeight="50.0" prefWidth="200.0" stylesheets="@../Rezerwacja/Rezerwacja1.css" text="Deleted" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="99.0" prefHeight="56.0" prefWidth="345.0">
+                           <children>
+                              <JFXButton fx:id="cancelButton" onAction="#cancel" prefHeight="50.0" prefWidth="200.0" stylesheets="@../Rezerwacja/Rezerwacja2.css" text="Anulować" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <TableView fx:id="tableView" focusTraversable="false" prefHeight="366.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="ime" prefWidth="130.0" text="Imię" />
+                  <TableColumn fx:id="Nazwisko" prefWidth="130.0" text="Nazwisko" />
+                  <TableColumn fx:id="Sprzet" prefWidth="130.0" text="Sprzęt" />
+                  <TableColumn fx:id="Misiac" prefWidth="130.0" text="Dzień" />
+                  <TableColumn fx:id="zGodziny" prefWidth="130.0" text="Z godziny" />
+                  <TableColumn fx:id="doGodziny" prefWidth="130.0" text="Do godziny" />
+               </columns>
+            </TableView>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
